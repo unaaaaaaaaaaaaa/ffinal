@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoleStyle | 尊爵鞋履與生活美學的頂級首選</title>
+  <meta name="description" content="SoleStyle 專注於提供極致舒適與工匠設計的頂級鞋履，包含休閒鞋、商務皮鞋、專業運動跑鞋，以及精緻的鞋材配件與保護保養噴霧。享受流暢奢華的線上購物體驗。">
+  
+  <!-- FontAwesome Icon CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Premium Style sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo" id="logoLink">
+        <img src="images/logo.png" alt="SoleStyle Logo">
+        <span>SOLESTYLE</span>
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <li class="nav-item active" data-page="home"><a href="#home"><i class="fa-solid fa-house"></i> 首頁</a></li>
+        <li class="nav-item" data-page="about"><a href="#about"><i class="fa-solid fa-circle-info"></i> 品牌故事</a></li>
+        <li class="nav-item" data-page="casual"><a href="#casual"><i class="fa-solid fa-shoe-prints"></i> 休閒鞋款</a></li>
+        <li class="nav-item" data-page="formal"><a href="#formal"><i class="fa-solid fa-user-tie"></i> 正式鞋款</a></li>
+        <li class="nav-item" data-page="sport"><a href="#sport"><i class="fa-solid fa-bolt"></i> 運動鞋款</a></li>
+        <li class="nav-item" data-page="acc"><a href="#acc"><i class="fa-solid fa-socks"></i> 鞋材配件</a></li>
+        <li class="nav-item" data-page="other"><a href="#other"><i class="fa-solid fa-box-open"></i> 其它商品</a></li>
+        <li class="nav-item" data-page="contact"><a href="#contact"><i class="fa-solid fa-envelope"></i> 聯絡我們</a></li>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Search trigger (decorative) -->
+        <button class="nav-btn" id="searchTriggerBtn" title="搜尋">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Member Profile trigger -->
+        <button class="nav-btn" id="profileTriggerBtn" title="會員帳戶">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <!-- LINE Group Page Trigger -->
+        <button class="nav-btn" id="lineTriggerBtn" title="加入 LINE" style="color: var(--line-color);">
+          <i class="fa-brands fa-line"></i>
+        </button>
+        <!-- Cart Drawer Trigger -->
+        <button class="nav-btn" id="cartTriggerBtn" title="購物車">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle nav-btn" id="mobileMenuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dynamic SPA Page Container -->
+  <main>
+    
+    <!-- 1. HOME PAGE -->
+    <section id="homePage" class="page-section active">
+      <div class="container">
+        <!-- Hero Section / Slider -->
+        <div class="hero-slider">
+          <div class="hero-slide active" id="heroSlide1">
+            <img class="hero-bg-img" src="images/casual_leather.png" alt="Featured Urban Leather Sneakers">
+            <div class="hero-content">
+              <span class="hero-tag">熱銷推薦</span>
+              <h1 class="hero-title">都市漫步的時尚靈魂</h1>
+              <p class="hero-desc">SoleStyle 都市真皮休閒板鞋，嚴選細緻荔枝紋頭層牛皮。以極簡流線設計融入摩登美學，讓您在繁忙的工作與悠閒的假日中，皆能展現品味氣場。</p>
+              <div class="hero-buttons">
+                <a href="#casual" class="btn-primary">立即探索休閒款 <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#about" class="btn-secondary">了解我們</a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-slide" id="heroSlide2">
+            <img class="hero-bg-img" src="images/formal_oxford.png" alt="Featured Oxford Dress Shoes">
+            <div class="hero-content">
+              <span class="hero-tag">商務正裝</span>
+              <h1 class="hero-title">精巧手藝 尊爵不凡</h1>
+              <p class="hero-desc">優雅牛津正裝皮鞋，傳承百年手工縫製工藝。修長鞋身設計配以全粒面拋光小牛皮，成就您踏上成功之路時無懈可擊的紳士名片。</p>
+              <div class="hero-buttons">
+                <a href="#formal" class="btn-primary">精選正裝鞋履 <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-slide" id="heroSlide3">
+            <img class="hero-bg-img" src="images/sport_running.png" alt="Featured Running Shoes">
+            <div class="hero-content">
+              <span class="hero-tag">運動機能</span>
+              <h1 class="hero-title">極致避震 澎湃前行</h1>
+              <p class="hero-desc">超輕量避震慢跑鞋，融入次世代高回彈爆米花中底科技，減輕每一次落地時的關節負擔。專為超越自我與不斷進取的您設計。</p>
+              <div class="hero-buttons">
+                <a href="#sport" class="btn-primary">探索科技跑鞋 <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Values / Features -->
+        <div class="values-grid">
+          <div class="value-card bg-glass">
+            <div class="value-icon"><i class="fa-solid fa-medal"></i></div>
+            <h3>頂級工匠精神</h3>
+            <p>堅持選用優質頭層皮革，歷經多道工序嚴格檢驗，打造卓越耐久度。</p>
+          </div>
+          <div class="value-card bg-glass">
+            <div class="value-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+            <h3>無感舒適貼合</h3>
+            <p>符合亞洲人腳型的 3D 楦頭設計與減壓鞋墊，給您如同漫步雲端的舒適。</p>
+          </div>
+          <div class="value-card bg-glass">
+            <div class="value-icon"><i class="fa-solid fa-earth-asia"></i></div>
+            <h3>永續環保意識</h3>
+            <p>鞋盒包裝全面採用再生紙漿，部分產品大底注入可降解環保配方。</p>
+          </div>
+        </div>
+
+        <!-- Hot Promo Banners -->
+        <div class="promo-section">
+          <div class="promo-banner">
+            <img src="images/acc_trees.png" alt="Premium cedar shoe trees banner">
+            <h3>頂級雪松防護配件</h3>
+            <p>保護您心愛的皮鞋，防潮防皺不變形</p>
+            <a href="#acc" class="btn-text">立即選購配件 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+          <div class="promo-banner">
+            <img src="images/other_waterproof.png" alt="Waterproof spray banner">
+            <h3>雨季救星！奈米防水</h3>
+            <p>防水防污保護噴霧，出門前噴一噴，鞋面長效清爽</p>
+            <a href="#other" class="btn-text">探索保養好物 <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Featured Products Header -->
+        <div class="featured-header">
+          <div>
+            <h2>熱銷人氣單品</h2>
+            <p style="color: var(--text-secondary);">顧客好評不斷，限量人氣鞋款現貨發售中</p>
+          </div>
+          <a href="#casual" class="btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;">查看所有款式</a>
+        </div>
+
+        <!-- Featured Products Grid (Dynamic Content) -->
+        <div class="product-grid" id="homeFeaturedProducts"></div>
+      </div>
+    </section>
+
+    <!-- 2. COMPANY PROFILE PAGE -->
+    <section id="aboutPage" class="page-section">
+      <div class="container about-section">
+        <div class="section-header">
+          <h2 class="section-title">關於 SoleStyle</h2>
+          <p class="section-subtitle">每一步，都是一首對經典與工藝的讚美詩</p>
+        </div>
+
+        <div class="about-hero bg-glass" style="padding: 40px;">
+          <h2>以匠人之心，溫暖您的每一步</h2>
+          <p style="margin-bottom: 20px;">SoleStyle 創立於 2018 年。創辦人在經歷了無數次長途差旅與腳部磨損的痛苦後，立志創立一個「既具備歐式優雅外觀，又擁有運動鞋般極致舒適」的鞋履品牌。我們聯合足部工學專家與資深手藝匠人，重塑楦頭輪廓，將現代高回彈科技隱藏於經典的皮革與布料中。</p>
+          <p>我們的品牌核心價值是「無縫融合經典美學與極致舒適技術」。對我們來說，鞋子不僅是保護雙腳的工具，更是彰顯個人生活態度的時尚語彙。</p>
+        </div>
+
+        <div class="section-header" style="margin-top: 60px; margin-bottom: 30px;">
+          <h2 class="section-title">品牌發展歷程</h2>
+        </div>
+
+        <!-- Brand Timeline -->
+        <div class="about-timeline bg-glass">
+          <div class="timeline-item">
+            <div class="timeline-badge"></div>
+            <span class="timeline-year">2018</span>
+            <div class="timeline-content">
+              <h3>品牌創立與研發</h3>
+              <p>SoleStyle 在台北正式成立。首間足部力學研究室成立，開始開發符合亞洲人足背高、腳寬特性的專屬 3D 楦頭。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-badge"></div>
+            <span class="timeline-year">2020</span>
+            <div class="timeline-content">
+              <h3>推出首款經典皮鞋</h3>
+              <p>發表「優雅牛津系列」，首次將記憶棉減壓墊置入正式皮鞋中，在市場上引發熱烈反響，成為眾多商務人士的首選。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-badge"></div>
+            <span class="timeline-year">2022</span>
+            <div class="timeline-content">
+              <h3>跨足機能與環保保養</h3>
+              <p>推出飛織運動慢跑系列。同時響應環保，開發奈米無毒防水噴霧與紅雪松木手工防皺鞋撐，提倡鞋物長效維護與永續理念。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-badge"></div>
+            <span class="timeline-year">2026</span>
+            <div class="timeline-content">
+              <h3>全通路智慧電商旗艦版</h3>
+              <p>全新改版上線，整合流暢的 3D 響應式商品瀏覽、會員智能推薦與專屬社群俱樂部，致力於為客戶打造更貼心、奢華的購物旅程。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PRODUCT CATALOG PAGE (Used dynamically for Casual, Formal, Sport, Acc, Other categories) -->
+    <section id="catalogPage" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="catalogTitle">鞋款專區</h2>
+          <p class="section-subtitle" id="catalogSubtitle">極致工藝，品味優雅，讓雙腳享受無微不至的呵護</p>
+        </div>
+
+        <div class="product-layout">
+          <!-- Catalog Filter Sidebar -->
+          <aside class="filter-sidebar bg-glass" id="catalogSidebar">
+            <div class="filter-group">
+              <h3 class="filter-title">產品分類</h3>
+              <div class="filter-options">
+                <label class="filter-checkbox">
+                  <input type="radio" name="categoryFilter" value="all" checked>
+                  <span>全部商品</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="categoryFilter" value="casual">
+                  <span>休閒鞋款</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="categoryFilter" value="formal">
+                  <span>正式鞋款</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="categoryFilter" value="sport">
+                  <span>運動鞋款</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="categoryFilter" value="acc">
+                  <span>鞋材與配件</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="categoryFilter" value="other">
+                  <span>其它商品</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h3 class="filter-title">價格區間</h3>
+              <div class="filter-options">
+                <label class="filter-checkbox">
+                  <input type="radio" name="priceFilter" value="all" checked>
+                  <span>不限價格</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="priceFilter" value="0-1000">
+                  <span>$1,000 以下</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="priceFilter" value="1000-2500">
+                  <span>$1,000 - $2,500</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="priceFilter" value="2500-4000">
+                  <span>$2,500 - $4,000</span>
+                </label>
+                <label class="filter-checkbox">
+                  <input type="radio" name="priceFilter" value="4000+">
+                  <span>$4,000 以上</span>
+                </label>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Catalog Grid and Controls -->
+          <div class="catalog-content">
+            <!-- Search & Sort Controls -->
+            <div class="catalog-controls">
+              <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="catalogSearchInput" placeholder="搜尋商品名稱或關鍵字...">
+              </div>
+              <div class="sort-select">
+                <select id="catalogSortSelect">
+                  <option value="featured">推薦商品排序</option>
+                  <option value="price-asc">價格：低到高</option>
+                  <option value="price-desc">價格：高到低</option>
+                  <option value="name-asc">品名：A-Z</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="catalogProductsGrid"></div>
+            
+            <!-- Dynamic No Products Found State -->
+            <div class="cart-empty" id="catalogEmptyState" style="display: none; padding: 60px 0;">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h3>找不到符合條件的商品</h3>
+              <p>建議調整您的搜尋詞彙或篩選條件後再次嘗試。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CONTACT US PAGE -->
+    <section id="contactPage" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">聯絡我們</h2>
+          <p class="section-subtitle">有任何問題或想預約門市體驗？我們非常樂意為您服務</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Panel -->
+          <div class="contact-info-panel bg-glass">
+            <div class="contact-intro">
+              <h3>SoleStyle 台北總部</h3>
+              <p>我們熱愛倾聽客戶的聲音。不論您是對鞋款尺碼有疑問，想尋求保養建議，抑或有意進行企業合作，都歡迎透過表單或以下管道與我們取得聯繫。</p>
+            </div>
+
+            <div class="contact-methods">
+              <div class="contact-method-card">
+                <div class="contact-method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-method-details">
+                  <h4>品牌旗艦體驗館</h4>
+                  <p>台北市大安區敦化南路一段 100 號</p>
+                </div>
+              </div>
+              
+              <div class="contact-method-card">
+                <div class="contact-method-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-method-details">
+                  <h4>客服專線</h4>
+                  <p>02-2771-8899 (週一至週五 09:30-18:30)</p>
+                </div>
+              </div>
+
+              <div class="contact-method-card">
+                <div class="contact-method-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-method-details">
+                  <h4>電子信箱</h4>
+                  <p>support@solestyle.com.tw</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 30px; border-radius: var(--radius-md); overflow: hidden; height: 180px; border: 1px solid var(--border-glass);">
+              <!-- Placeholder Map Image with Glass Design -->
+              <div style="background: linear-gradient(135deg, #111e3b, #090e1f); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary);">
+                <i class="fa-solid fa-map-location-dot" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <p style="font-size: 0.85rem; font-weight: 600;">地圖載入中...</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">台北市大安區敦化南路一段 100 號</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Panel -->
+          <div class="contact-form-panel bg-glass">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contactName" class="form-label">您的姓名 <span style="color: var(--danger);">*</span></label>
+                <input type="text" id="contactName" class="form-input" required placeholder="例如：林先生 / 陳小姐">
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">電子信箱 <span style="color: var(--danger);">*</span></label>
+                <input type="email" id="contactEmail" class="form-input" required placeholder="example@email.com">
+              </div>
+
+              <div class="form-group">
+                <label for="contactPhone" class="form-label">聯絡電話</label>
+                <input type="tel" id="contactPhone" class="form-input" placeholder="0912-345-678">
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">諮詢主題 <span style="color: var(--danger);">*</span></label>
+                <select id="contactSubject" class="form-input" required style="background: #090e1f; appearance: auto;">
+                  <option value="" disabled selected>請選擇您的問題分類</option>
+                  <option value="size">尺碼諮詢與推薦</option>
+                  <option value="order">訂單與出貨查詢</option>
+                  <option value="maintenance">鞋具清潔與維護</option>
+                  <option value="cooperation">商業合作洽談</option>
+                  <option value="other">其它意見與反饋</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">留言內容 <span style="color: var(--danger);">*</span></label>
+                <textarea id="contactMessage" class="form-input" required placeholder="請詳細填寫您的問題，我們將在一個工作天內指派專人與您聯繫。"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary btn-submit">
+                <span>送出聯絡表單</span> <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LOGIN PAGE -->
+    <section id="loginPage" class="page-section">
+      <div class="container">
+        <div class="auth-wrapper bg-glass">
+          <div class="auth-header">
+            <h2>會員登入</h2>
+            <p>登入您的帳戶，享有免運費及尊榮會員專屬折扣</p>
+          </div>
+
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail" class="form-label">電子信箱</label>
+              <input type="email" id="loginEmail" class="form-input" required placeholder="your@email.com">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <label for="loginPassword" class="form-label" style="margin-bottom: 0;">密碼</label>
+                <a href="#forgot" class="text-gold" style="font-size: 0.8rem;" id="forgotPasswordBtn">忘記密碼？</a>
+              </div>
+              <input type="password" id="loginPassword" class="form-input" required placeholder="請輸入您的密碼">
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+              <input type="checkbox" id="rememberMe" style="width: 16px; height: 16px; accent-color: var(--primary);">
+              <label for="rememberMe" class="form-label" style="margin-bottom: 0; cursor: pointer; font-size: 0.85rem;">記住我的登入資訊</label>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit" style="height: 46px;">
+              <span>立即登入</span> <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </form>
+
+          <div class="divider">或使用以下社群帳戶快速登入</div>
+
+          <div class="social-login">
+            <button class="btn-social btn-line" id="lineSocialLoginBtn">
+              <i class="fa-brands fa-line" style="font-size: 1.25rem;"></i>
+              <span>使用 LINE 帳戶登入</span>
+            </button>
+            <button class="btn-social" id="googleSocialLoginBtn">
+              <i class="fa-brands fa-google"></i>
+              <span>使用 Google 帳戶登入</span>
+            </button>
+          </div>
+
+          <div class="auth-switch">
+            還不是會員？ <a href="#register" id="toRegisterBtn">免費註冊帳戶</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. REGISTER PAGE -->
+    <section id="registerPage" class="page-section">
+      <div class="container">
+        <div class="auth-wrapper bg-glass">
+          <div class="auth-header">
+            <h2>免費加入會員</h2>
+            <p>註冊即送 $150 購物抵用金與首購九折折扣碼</p>
+          </div>
+
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="regName" class="form-label">會員姓名</label>
+              <input type="text" id="regName" class="form-input" required placeholder="請輸入您的姓名">
+            </div>
+
+            <div class="form-group">
+              <label for="regEmail" class="form-label">電子信箱</label>
+              <input type="email" id="regEmail" class="form-input" required placeholder="your@email.com">
+            </div>
+
+            <div class="form-group">
+              <label for="regPassword" class="form-label">設定密碼</label>
+              <input type="password" id="regPassword" class="form-input" required placeholder="最少 6 位英數字組合">
+            </div>
+
+            <div class="form-group">
+              <label for="regPasswordConfirm" class="form-label">確認密碼</label>
+              <input type="password" id="regPasswordConfirm" class="form-input" required placeholder="請再次輸入密碼">
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 24px;">
+              <input type="checkbox" id="termsAgreement" required style="width: 16px; height: 16px; margin-top: 4px; accent-color: var(--primary);">
+              <label for="termsAgreement" class="form-label" style="margin-bottom: 0; cursor: pointer; font-size: 0.8rem; line-height: 1.4;">我已閱讀並同意 <a href="#terms" class="text-gold">服務條款</a> 與 <a href="#privacy" class="text-gold">隱私權保護政策</a></label>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit" style="height: 46px;">
+              <span>同意條款並註冊</span> <i class="fa-solid fa-user-plus"></i>
+            </button>
+          </form>
+
+          <div class="auth-switch">
+            已經擁有帳戶？ <a href="#login" id="toLoginBtn">立即登入</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LINE GROUP PAGE -->
+    <section id="linePage" class="page-section">
+      <div class="container">
+        <div class="line-invite-container bg-glass">
+          <div class="line-logo-wrap">
+            <i class="fa-brands fa-line"></i>
+          </div>
+          
+          <h2 class="line-title">加入 SoleStyle 官方 LINE 社群</h2>
+          <p class="line-desc">第一時間獲取限量新品預告、會員專屬快閃折扣碼，並享有專屬一對一穿搭客服諮詢服務。</p>
+          
+          <div class="line-qr-card">
+            <div class="line-qr-wrap">
+              <!-- MOCK LINE QR CODE (Using structured styling to represent a premium code) -->
+              <div style="background: linear-gradient(135deg, #06c755, #05b04b); width: 100%; height: 100%; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px;">
+                <i class="fa-brands fa-line" style="font-size: 3.5rem; margin-bottom: 10px;"></i>
+                <i class="fa-solid fa-qrcode" style="font-size: 4rem;"></i>
+              </div>
+            </div>
+            <p><i class="fa-solid fa-circle-check"></i> 掃描上方二維碼</p>
+          </div>
+
+          <div class="line-benefits">
+            <h4>群組會員獨享三大禮遇</h4>
+            <div class="line-benefits-list">
+              <div class="line-benefit-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>**首入禮**：入群即送 $100 現折優惠代碼。</span>
+              </div>
+              <div class="line-benefit-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>**優先購**：限量聯名鞋款、絕版保養配件優先下單。</span>
+              </div>
+              <div class="line-benefit-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>**一對一**：專業客服在線，提供款式推薦與尺碼諮詢。</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-primary btn-line-join" id="lineJoinBtn">
+            <i class="fa-brands fa-line" style="font-size: 1.3rem;"></i>
+            <span>點擊快速加入 LINE 群組</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-cart-shopping text-gold"></i> 您的購物車</h3>
+      <div class="cart-drawer-close" id="cartCloseBtn"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+    
+    <!-- Cart Items list container -->
+    <div class="cart-items-container" id="cartItemsList">
+      <!-- Dynamic list generated by script -->
+    </div>
+    
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span class="cart-summary-label">商品小計</span>
+        <span class="cart-summary-value" id="cartSubtotalAmount">NT$ 0</span>
+      </div>
+      <button class="btn-primary cart-checkout-btn" id="cartCheckoutBtn">
+        <span>前往結帳</span> <i class="fa-solid fa-credit-card"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal Overlay -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-container bg-glass" id="productModalContainer">
+      <div class="modal-close" id="modalCloseBtn"><i class="fa-solid fa-xmark"></i></div>
+      
+      <!-- Dynamic product details container -->
+      <div class="product-detail-grid" id="modalProductDetails">
+        <!-- Inner contents loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>SOLESTYLE</h3>
+        <p>我們深信，每雙鞋子都盛裝著一段旅程。SoleStyle 結合歐式奢華與足力美學，為您的探索之旅提供最舒適的伴侶。</p>
+        <div class="footer-socials">
+          <a href="#facebook" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#instagram" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#line" class="social-icon" title="LINE" style="color: var(--line-color);"><i class="fa-brands fa-line"></i></a>
+          <a href="#youtube" class="social-icon" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>產品系列</h4>
+        <div class="footer-links">
+          <a href="#casual">日常休閒鞋款</a>
+          <a href="#formal">雅痞正式皮鞋</a>
+          <a href="#sport">機能避震慢跑鞋</a>
+          <a href="#acc">精緻鞋材與配件</a>
+          <a href="#other">鞋具防水保養</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>客服支援</h4>
+        <div class="footer-links">
+          <a href="#about">關於我們</a>
+          <a href="#contact">聯絡表單</a>
+          <a href="#size-guide">尺碼指南</a>
+          <a href="#faq">常見問題 FAQ</a>
+          <a href="#shipping">配送與退換貨政策</a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h4>訂閱電子報</h4>
+        <p>獲取新品上架資訊與不定期獨家折扣！</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="輸入您的 Email 地址" required>
+          <button type="submit">訂閱</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 SoleStyle Inc. 版權所有。由 Antigravity 團隊精心設計建構。</p>
+      <div style="display: flex; gap: 16px;">
+        <a href="#privacy">隱私權政策</a>
+        <a href="#terms">服務條款</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Files -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
