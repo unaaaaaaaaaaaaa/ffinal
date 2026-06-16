@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Navigation / Router Setup
   const routes = {
-    'home': { sectionId: 'homePage', title: 'SoleStyle | 尊爵鞋履與生活美學的頂級首選' },
+    'home': { sectionId: 'homePage', title: '楊智涵的鞋類電商' },
     'about': { sectionId: 'aboutPage', title: '關於我們 | SoleStyle 品牌故事' },
     'casual': { sectionId: 'catalogPage', title: '日常休閒鞋款 | SoleStyle', category: 'casual' },
     'formal': { sectionId: 'catalogPage', title: '雅痞正式皮鞋 | SoleStyle', category: 'formal' },
